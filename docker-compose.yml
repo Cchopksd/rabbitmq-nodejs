@@ -1,0 +1,14 @@
+services:
+  app:
+    image: test:latest
+    deploy:
+      resources:
+        limits:
+          memory: 1G # กำหนดขนาด RAM สูงสุดที่ container จะใช้
+          cpus: "1.5" # กำหนดจำนวน CPU สูงสุดที่ container จะใช้
+        reservations:
+          memory: 512M # กำหนดขนาด memory ที่ container จะใช้เป็นขั้นต่ำ
+          cpus: "0.5" # กำหนด CPU ที่ต้องการขั้นต่ำ
+    ports:
+      - "3000:3000"
+
